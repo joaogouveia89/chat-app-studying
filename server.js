@@ -12,4 +12,5 @@ app.get('/', function(req, res){
   res.sendFile(__dirname + '/index.html');
 });
 
+app.use('/css', express.static('css'));
 server.listen(8080);

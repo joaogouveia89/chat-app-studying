@@ -12,6 +12,4 @@ app.get('/', function(req, res){
   res.sendFile(__dirname + '/index.html');
 });
 
-app.use('/js', express.static('js'));
-
 server.listen(8080);

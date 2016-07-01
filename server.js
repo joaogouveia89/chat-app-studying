@@ -5,7 +5,7 @@ var io = require('socket.io')(server);
 var participants = [];
 
 io.on('connection', function(client){
-
+  console.log("connected");
 });
 
 app.get('/', function(req, res){
@@ -13,4 +13,5 @@ app.get('/', function(req, res){
 });
 
 app.use('/css', express.static('css'));
+app.use('/js', express.static('js'));
 server.listen(8080);

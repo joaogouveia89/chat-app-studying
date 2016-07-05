@@ -6,11 +6,8 @@ $(document).ready(function(){
     $("#join-request").click(function(){
       var nickname = $("#nickname").val().trim();
       if(nickname == undefined || nickname === "" || nickname == null){
-        Materialize.toast("Nickname cannot be empty!", 5000);
-        socket = io.connect('http://localhost:8080', {
-          'reconnect': true,
-          'reconnection delay': 500
-        });
+        Materialize.toast("Nickname cannot be empty, please refresh the browser and reconnect!", 5000);
+        socket.emit('invalid-nickname');
       }
     });
   });

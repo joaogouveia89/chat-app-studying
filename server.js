@@ -6,6 +6,10 @@ var participants = [];
 
 io.on('connection', function(client){
   console.log("connected");
+  client.on('invalid-nickname', function(){
+    console.log("client disconnected!");
+    client.disconnect();
+  });
 });
 
 app.get('/', function(req, res){
